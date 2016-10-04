@@ -1,11 +1,11 @@
 {
-  "brand": "joyent",
+  "brand": "lx",
   "resolvers": [
     "8.8.8.8",
     "8.8.4.4"
   ],
   "ram": 128,
-  "alias": "os1",
+  "alias": "lxdeb",
   "customer_metadata": {
   },
   "nics": [
@@ -17,6 +17,6 @@
       ]
     }
   ],
-  "image_uuid": "088b97b0-e1a1-11e5-b895-9baa2086eb33",
+  "image_uuid": "a00cef0e-1e73-11e5-b628-0f24cabf6a85",
   "quota": 3
 }

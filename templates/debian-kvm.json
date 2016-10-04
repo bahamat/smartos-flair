@@ -1,0 +1,30 @@
+{
+  "brand": "kvm",
+  "resolvers": [
+    "8.8.8.8",
+    "8.8.4.4"
+  ],
+  "ram": "512",
+  "vcpus": "1",
+  "alias": "vmdeb",
+  "customer_metadata": {
+    "root_password": "beer"
+  },
+  "nics": [
+    {
+      "nic_tag": "admin",
+      "ips": [
+        "dhcp",
+        "addrconf"
+      ],
+      "model": "virtio"
+    }
+  ],
+  "disks": [
+    {
+      "image_uuid": "d8d81aee-20cf-11e5-8503-2bc101a1d577",
+      "boot": true,
+      "model": "virtio"
+    }
+  ]
+}
