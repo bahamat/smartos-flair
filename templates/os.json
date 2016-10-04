@@ -1,0 +1,32 @@
+{
+  "autoboot": true,
+  "brand": "joyent",
+  "limit_priv": "default",
+  "resolvers": [
+    "8.8.8.8",
+    "8.8.4.4"
+  ],
+  "alias": "os1",
+  "image_uuid": "088b97b0-e1a1-11e5-b895-9baa2086eb33",
+  "nics": [
+    {
+      "nic_tag": "internal0",
+      "gateways": [
+        "192.168.0.1"
+      ],
+      "ips": [
+        "192.168.0.10/24",
+        "addrconf"
+      ],
+      "primary": true
+    }
+  ],
+  "cpu_shares": 8,
+  "max_lwps": 4000,
+  "zfs_io_priority": 8,
+  "max_physical_memory": 128,
+  "max_locked_memory": 128,
+  "max_swap": 512,
+  "tmpfs": 128,
+  "quota": 3
+}
