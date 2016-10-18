@@ -1,0 +1,22 @@
+{
+  "brand": "joyent",
+  "resolvers": [
+    "8.8.8.8",
+    "8.8.4.4"
+  ],
+  "ram": 128,
+  "alias": "os1",
+  "customer_metadata": {
+  },
+  "nics": [
+    {
+      "nic_tag": "admin",
+      "ips": [
+        "dhcp",
+        "addrconf"
+      ]
+    }
+  ],
+  "image_uuid": "e6cee9c8-8be2-11e6-b53e-172cb61a3a47",
+  "quota": 3
+}
