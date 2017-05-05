@@ -9,6 +9,17 @@ test something, and didn't want to recreate it later. It provides the
 
 ## How to use
 
-1. Install the pkgsrc "tools" set in the gz <https://pkgsrc.joyent.com/install-on-illumos/>
-2. `pkgin install git mozilla-rootcerts`
-3. `cd /opt; git clone https://github.com/bahamat/smartos-flair custom`
+The preferred way is to install the pkgsrc "tools" set in the gz
+<https://pkgsrc.joyent.com/install-on-illumos/> first.
+
+    pkgin install git mozilla-rootcerts
+    cd /opt; git clone https://github.com/bahamat/smartos-flair custom
+    svccfg import /opt/custom/smf/*
+
+If you're not using pkgsrc, you can still get some flair. This method doesn't
+validate GitHub's SSL certificate, so use with care.
+
+    curl -k -LOC - https://github.com/bahamat/smartos-flair/archive/master.tar.gz
+    gtar zxf master.tar.gz
+    mv smartos-flair-master custom
+    svccfg import /opt/custom/smf/*
