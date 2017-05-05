@@ -1,0 +1,23 @@
+#!/bin/bash
+
+set -o errexit
+
+PATH=/opt/tools/bin:/opt/custom/bin:$PATH
+
+tempdir=$(mktemp -d)
+cd $tempdir
+
+if command -v git; then
+    git clone https://github.com/bahamat/smartos-ipv6-smf
+    cd smartos-ipv6-smf
+else
+    curl -k -LOC - https://github.com/bahamat/smartos-ipv6-smf/archive/master.tar.gz
+    gtar zxf master.tar.gz
+    cd smartos-ipv6-smf-master
+fi
+
+if [[ -x ./install ]]; then
+    ./install
+fi
+cd
+rm -rf "${tempdir:?}"
