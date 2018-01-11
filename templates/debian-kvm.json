@@ -22,7 +22,7 @@
   ],
   "disks": [
     {
-      "image_uuid": "d8d81aee-20cf-11e5-8503-2bc101a1d577",
+      "image_uuid": "f7d5c462-9ace-11e6-9e1e-83b238b5d758",
       "boot": true,
       "model": "virtio"
     }
