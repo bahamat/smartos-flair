@@ -12,7 +12,7 @@ test something, and didn't want to recreate it later. It provides the
 The preferred way is to install the pkgsrc "tools" set in the gz
 <https://pkgsrc.joyent.com/install-on-illumos/> first.
 
-    pkgin install git mozilla-rootcerts
+    /opt/tools/bin/pkgin -y install git-base mozilla-rootcerts
     cd /opt; git clone https://github.com/bahamat/smartos-flair custom
     svccfg import /opt/custom/smf/*
 
