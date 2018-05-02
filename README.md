@@ -13,7 +13,7 @@ The preferred way is to install the pkgsrc "tools" set in the gz
 <https://pkgsrc.joyent.com/install-on-illumos/> first.
 
     /opt/tools/bin/pkgin -y install git-base mozilla-rootcerts
-    cd /opt; git clone https://github.com/bahamat/smartos-flair custom
+    cd /opt; /opt/tools/bin/git clone https://github.com/bahamat/smartos-flair custom
     svccfg import /opt/custom/smf/*
 
 If you're not using pkgsrc, you can still get some flair. This method doesn't
