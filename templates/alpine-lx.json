@@ -4,6 +4,7 @@
     "8.8.8.8",
     "8.8.4.4"
   ],
+  "kernel_version": "3.13.0",
   "ram": 128,
   "alias": "alpine",
   "customer_metadata": {
