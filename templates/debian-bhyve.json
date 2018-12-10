@@ -1,19 +1,20 @@
 {
-  "brand": "kvm",
+  "brand": "bhyve",
   "resolvers": [
     "8.8.8.8",
     "8.8.4.4"
   ],
   "ram": "512",
   "vcpus": "1",
-  "alias": "kvmdeb",
+  "alias": "debhyve",
   "customer_metadata": {
     "root_password": "beer"
   },
   "nics": [
     {
       "nic_tag": "admin",
-      "ips": [ "dhcp", "addrconf" ],
+      "ips": ["10.88.88.250/24"],
+      "gateway": "10.88.88.2",
       "model": "virtio"
     }
   ],
