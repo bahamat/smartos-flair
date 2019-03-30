@@ -1,2 +1,0 @@
-PATH=/opt/tools/sbin:/opt/tools/bin:$PATH
-unset MANPATH
