@@ -8,7 +8,7 @@
   "vcpus": "1",
   "alias": "debhyve",
   "customer_metadata": {
-    "root_password": "beer"
+    "cloud-init:user-data": "#cloud-config\n\npassword: Insecure0"
   },
   "nics": [
     {
