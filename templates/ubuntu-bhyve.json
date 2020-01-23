@@ -1,0 +1,38 @@
+{
+  "brand": "bhyve",
+  "resolvers": [
+    "8.8.8.8",
+    "8.8.4.4"
+  ],
+  "ram": "512",
+  "vcpus": "1",
+  "alias": "ubuntubhyve",
+  "hostname": "ubuntubhyve",
+  "customer_metadata": {
+    "root_authorized_keys": "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPu+h5Zu8GHgh8seZ9GittTWHfpbi0vkNksH77yaMKqD bbennett"
+  },
+  "cpu_type": "host",
+  "nics": [
+    {
+      "nic_tag": "admin",
+      "ips": [
+        "10.88.88.240/24"
+      ],
+      "gateway": "10.88.88.2",
+      "model": "virtio"
+    }
+  ],
+  "disks": [
+    {
+      "image_uuid": "9aa48095-da9d-41ca-a094-31d1fb476b98",
+      "boot": true,
+      "media": "disk",
+      "model": "virtio"
+    },
+    {
+      "media": "disk",
+      "model": "virtio",
+      "size": 1024
+    }
+  ]
+}
