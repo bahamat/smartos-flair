@@ -1,6 +1,16 @@
 #!/bin/bash
 
+source /lib/sdc/config.sh
+
 if [[ -f /opt/custom/etc/bashrc ]]; then
     cat /opt/custom/etc/bashrc >> /root/.profile
     cat /opt/custom/etc/bashrc >> /root/.bashrc
+fi
+
+if ! [[ -f "${CONFIG_config_inc_dir}/${CONFIG_root_authorized_keys_file}" ]]; then
+    if ! [[ -d "${CONFIG_config_inc_dir}" ]]; then
+	mkdir -p "${CONFIG_config_inc_dir}"
+    fi
+    curl -o "${CONFIG_config_inc_dir}/${CONFIG_root_authorized_keys_file}" \
+	https://github.com/bahamat.keys
 fi
