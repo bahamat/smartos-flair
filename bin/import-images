@@ -1,0 +1,9 @@
+#!/bin/bash
+
+images=( $(for i in *json; do
+    json -f "$i" image_uuid disks.0.image_uuid
+done) )
+
+for image in "${images[@]}"; do
+    imgadm import "$image"
+done
