@@ -11,6 +11,9 @@ if ! [[ -f "${CONFIG_config_inc_dir}/${CONFIG_root_authorized_keys_file}" ]]; th
     if ! [[ -d "${CONFIG_config_inc_dir}" ]]; then
 	mkdir -p "${CONFIG_config_inc_dir}"
     fi
-    curl -o "${CONFIG_config_inc_dir}/${CONFIG_root_authorized_keys_file}" \
+    if [[ -f /opt/tools/share/mozilla-rootcerts/cacert.pem ]]; then
+        CURL_CA_BUNDLE=/opt/tools/share/mozilla-rootcerts/cacert.pem
+        curl -o "${CONFIG_config_inc_dir}/${CONFIG_root_authorized_keys_file}" \
 	https://github.com/bahamat.keys
+    fi
 fi
