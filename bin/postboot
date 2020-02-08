@@ -2,10 +2,19 @@
 
 source /lib/sdc/config.sh
 
+load_sdc_config
+load_sdc_sysinfo
+
 if [[ -f /opt/custom/etc/bashrc ]]; then
     cat /opt/custom/etc/bashrc >> /root/.profile
     cat /opt/custom/etc/bashrc >> /root/.bashrc
 fi
+
+if [[ -z $CONFIG_root_authorized_keys_file ]]; then
+    printf 'root_authorized_keys_file=authorized_keys\n' >> ${SDC_CONFIG_FILENAME}
+    load_sdc_config
+fi
+
 
 if ! [[ -f "${CONFIG_config_inc_dir}/${CONFIG_root_authorized_keys_file}" ]]; then
     if ! [[ -d "${CONFIG_config_inc_dir}" ]]; then
@@ -14,6 +23,7 @@ if ! [[ -f "${CONFIG_config_inc_dir}/${CONFIG_root_authorized_keys_file}" ]]; th
     if [[ -f /opt/tools/share/mozilla-rootcerts/cacert.pem ]]; then
         CURL_CA_BUNDLE=/opt/tools/share/mozilla-rootcerts/cacert.pem
         curl -o "${CONFIG_config_inc_dir}/${CONFIG_root_authorized_keys_file}" \
-	https://github.com/bahamat.keys
+            https://github.com/bahamat.keys
+        svcadm restart smartdc/config
     fi
 fi
