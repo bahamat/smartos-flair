@@ -1,0 +1,29 @@
+{
+  "brand": "joyent",
+  "resolvers": [
+    "8.8.8.8",
+    "8.8.4.4"
+  ],
+  "ram": 128,
+  "alias": "vol_owner",
+  "customer_metadata": {},
+  "nics": [
+    {
+      "nic_tag": "admin",
+      "ips": [
+        "dhcp",
+        "addrconf"
+      ]
+    }
+  ],
+  "filesystems": [
+    {
+      "source": "create-volume",
+      "target": "/vol1",
+      "type": "lofs",
+      "options": []
+    }
+  ],
+  "image_uuid": "e75c9d82-3156-11ea-9220-c7a6bb9f41b6",
+  "quota": 3
+}
