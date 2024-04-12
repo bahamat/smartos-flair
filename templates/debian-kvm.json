@@ -7,8 +7,8 @@
   "ram": "512",
   "vcpus": "1",
   "alias": "kvmdeb",
-  "customer_metadata": {
-    "root_password": "beer"
+  "internal_metadata": {
+    "root_pw": "beer"
   },
   "nics": [
     {
